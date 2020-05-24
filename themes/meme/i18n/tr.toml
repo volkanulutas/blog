@@ -1,0 +1,174 @@
+[ellipsis]
+other = "…"
+
+[colon]
+other = ": "
+
+[minute]
+one = "dakika"
+other = "dakika"
+
+[tocTitle]
+other = "İçerikler"
+
+[readMore]
+other = "Devamını Okuyun..."
+
+[prevPage]
+other = "Yeni Yazılar"
+
+[nextPage]
+other = "Eski Yazılar"
+
+[copy]
+other = "Kopyala"
+
+[copied]
+other = "Kopyalandı!"
+
+[copyrightAuthor]
+other = "Yazar"
+
+[copyrightLink]
+other = "Bağlantı"
+
+[copyrightLicense]
+other = "Lisans"
+
+[shareOn]
+other = "Paylşa:"
+
+[shareOnTitle]
+other = "Paylaş:"
+
+[shareViaTitle]
+other = "Paylaş:"
+
+[relatedPosts]
+other = "Bu içerikler ilginizi çekebilir:"
+
+[loadComments]
+other = "Yorumlar Yüklensin mi?"
+
+[pageNotFound]
+other = "404 - Sayfa Bulunamadı."
+
+[fofLinkText]
+other = "Anasayfa"
+
+[serviceWorkerUpdatedText]
+other = "Yeni bir güncelleme bulundu."
+
+[serviceWorkerUpdatedAction]
+other = "Yenile"
+
+[searchResultsTitle]
+one = "“{{ .Term }}” araması için bir sonuç bulundu"
+other = "“{{ .Term }}” araması için {{ .Count }} sonuç bulundu"
+
+[searchResultsNone]
+other = "No results found for “{{ .Term }}”"
+
+
+# Socials
+
+[twitter]
+other = "Twitter"
+
+[facebook]
+other = "Facebook"
+
+[linkedin]
+other = "LinkedIn"
+
+[telegram]
+other = "Telegram"
+
+[weibo]
+other = "Weibo"
+
+[douban]
+other = "Douban"
+
+[qq]
+other = "QQ"
+
+[qzone]
+other = "Qzone"
+
+[qrcode]
+other = "Karakod"
+
+
+# Months
+# Used for `i18nMonth`
+
+[january]
+other = "Ocak"
+
+[february]
+other = "Şubat"
+
+[march]
+other = "Mart"
+
+[april]
+other = "Nisan"
+
+[may]
+other = "Mayıs"
+
+[june]
+other = "Haziran"
+
+[july]
+other = "Temmuz"
+
+[august]
+other = "Ağustos"
+
+[september]
+other = "Eylül"
+
+[october]
+other = "Ekim"
+
+[november]
+other = "Kasım"
+
+[december]
+other = "Aralık"
+
+
+# Numbers
+# Used for `i18nYear`
+
+[0]
+other = "0"
+
+[1]
+other = "1"
+
+[2]
+other = "2"
+
+[3]
+other = "3"
+
+[4]
+other = "4"
+
+[5]
+other = "5"
+
+[6]
+other = "6"
+
+[7]
+other = "7"
+
+[8]
+other = "8"
+
+[9]
+other = "9"
