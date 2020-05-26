@@ -2,7 +2,7 @@
 author:
   name: "Volkan Ulutaş"
 date: 2020-05-24
-linktitle: React Native Navigation (StackNavigation ve TabNavigation)
+linktitle: React Native - Navigation V5 (StackNavigation ve TabNavigation)
 type:
 - post
 - posts
@@ -22,13 +22,24 @@ draft: false
 
 <img src="/images/react-native-navigation/react-native.png" height="300" width="600">
 
-Merhabalar, bu yazımızda React-Native menü ve sayfalar arası geçişleri inceleyeceğiz. React-Native'ın kurulumu ile ilgili çok güzel anlatımlar mevcut bunların linkine aşağıdan ulaşabilirsiniz, daha sonra bu kurulumlarla ilgili ben de bu blog'da paylaşımda bulunacağım. 
+Merhabalar, bu yazımızda React-Native menü ve sayfalar arası geçişleri inceleyeceğiz. 
 
-React-Native geliştirmesi için bir editör kullanmamız işimizi çok kolaylaştıracaktır. Benim tercihimi Vİsual Studio Code'dan yana kullandım, [buradan](https://code.visualstudio.com/download) indirme işlemini yapabilirsiniz.
 
-### React Native Kurulumu [Windows](https://medium.com/mol42/windows-%C3%BCzerinde-react-native-kurulumu-4de15e0e33b9) | [MacOS](https://medium.com/mol42/macos-%C3%BCzerinde-react-native-kurulumu-71d4f96c282e) | [Linux](https://medium.com/mol42/linux-%C3%BCzerinde-react-native-kurulumu-a61b54927941)
 
-## 1.) react-native Projesinin Başlatılması:
+## 1.) React Natıve Kurulumu 
+
+React-Native'ın kurulumu ile ilgili çok güzel anlatımlar mevcut bunların linkine aşağıdan ulaşabilirsiniz, daha sonra bu kurulumlarla ilgili ben de bu blog'da paylaşımda bulunacağım. 
+
+>> Kurulum Bağlantıları: 
+*[Windows](https://medium.com/mol42/windows-%C3%BCzerinde-react-native-kurulumu-4de15e0e33b9)* , *[MacOS](https://medium.com/mol42/macos-%C3%BCzerinde-react-native-kurulumu-71d4f96c282e)*, *[Linux](https://medium.com/mol42/linux-%C3%BCzerinde-react-native-kurulumu-a61b54927941)*
+
+## 1.1.) Editor Seçimi ve Kurulum
+
+React-Native geliştirmesi için bir editör kullanmamız işimizi çok kolaylaştıracaktır. Benim tercihimi Visual Studio Code'dan yana kullandım, *[buradan](https://code.visualstudio.com/download)* indirme işlemini yapabilirsiniz.
+
+>> [Visual Studio Code İndirme Bağlantısı](https://code.visualstudio.com/download)
+
+## 2.) React-Natıve Projesinin Başlatılması:
 Kurumları bu adıma geldiğimizde tamamlamış olduğunuzu varsayıyorum. Şimdi yeni bir React-Native uygulamasını aşağıdaki komut ile başlatalım: 
 ```sh
 react-native init ReactNativeNavigationSample 
@@ -49,21 +60,22 @@ react-native run-ios
 react-native run-android
 ```
 
->> Bu aşamada aşağıdaki ekran görüntüsünde gibi bir hata alırsanız, proje ana dizininde /template/package.json dosyasını siliniz.
-
-
->> ![metin](/images/react-native-navigation/1.png)
-
 Kurulum doğru olarak yapılandırılmış ise, emulator veya bağlı olan cihazda aşağıdaki ekran görüntüsü oluşmaktadır.
 
 
 <img src="/images/react-native-navigation/2.png" height="600" width="600">
 
-<img src="/images/react-native-navigation/github.jpg" height="150" width="300">
+>> Bu aşamada aşağıdaki ekran görüntüsünde gibi bir hata alırsanız, proje ana dizininde /template/package.json dosyasını siliniz.
 
-Bu aşamaya kadar kodumuzu [buradan](https://github.com/volkanulutas/blog-tutorials/tree/ebfec43487241bac1314de81ea3121f2a6c43f9e) inceleyebilirsiniz.
+>> ![metin](/images/react-native-navigation/1.png)
 
-## 2.) react-native-navigation Kütüphanesinin Kurulumu:
+
+<img src="/images/react-native-navigation/github.jpg" height="150" width="300" /> 
+
+Bu aşamaya kadar kodumuzu ***[buradan](https://github.com/volkanulutas/blog-tutorials/tree/ebfec43487241bac1314de81ea3121f2a6c43f9e)*** inceleyebilirsiniz.
+
+
+## 3.) react-natıve-navıgation Kütüphanesinin Kurulumu:
 
 Ana dizine gidelim.
 ```sh
@@ -72,14 +84,13 @@ cd ReactNativeNavigationSample
 
 Daha sonra "navigation" için gerekli kütüphanelerin kurulumuna başlayalım. Kurulum için "npm" veya "yarn" paket yöneticilerini kullanabilirsiniz.
 
-1. Navigation kütüphanesinin ve bağlılıklarının (dependency) kurulumunu yapalım.
+**3.1.)** Navigation kütüphanesinin ve bağlılıklarının (dependency) kurulumunu yapalım.
 
 ```sh
 yarn add @react-navigation/native
 yarn add @react-navigation/stack
 yarn add @react-navigation/bottom-tabs
 ```
-
 veya
 ```sh
 npm install @react-navigation/native
@@ -87,7 +98,7 @@ npm install @react-navigation/stack
 npm install @react-navigation/bottom-tabs
 ```
 
-2. Navigation için gerekli bağımlılıkları kuralım:
+**3.2.)** Navigation için gerekli bağımlılıkları kuralım:
 
 ```sh
 yarn add react-native-reanimated react-native-gesture-handler react-native-screens react-native-safe-area-context @react-native-community/masked-view
@@ -97,7 +108,7 @@ veya
 npm install react-native-reanimated react-native-gesture-handler react-native-screens react-native-safe-area-context @react-native-community/masked-view
 ```
 
-3. Gesture Handler kütüphanesini kuralım:
+**3.3.)** Gesture Handler kütüphanesini kuralım:
 
 ```sh
 yarn add react-native-gesture-handler
@@ -106,7 +117,7 @@ veya
 ```sh
 npm install react-native-gesture-handler
 ```
-4.) Daha sonra IOS için gerekli olan "pod" kurulumunu yapalım. Bu işlemi yeni bir kütüphane kurulumunun ardından tekrarlamanızı öneririm.
+**3.4.)** Daha sonra IOS için gerekli olan "pod" kurulumunu yapalım. Bu işlemi yeni bir kütüphane kurulumunun ardından tekrarlamanızı öneririm.
 
 ```sh
 cd ios
@@ -114,17 +125,17 @@ pod install
 cd ..
 react-native link
 ```
-4. Navigation için gerekli bağımlılıkları kurduk. Şimdi tasarıma başlamadan önce projeyi emulator veya telefonda çalıştıralım:
+**3.5.)** Navigation için gerekli bağımlılıkları kurduk. Şimdi tasarıma başlamadan önce projeyi emulator veya telefonda çalıştıralım:
 
 ```sh
 react-native run-ios
 react-native run-android
 ```
 
-## 3.) react-native-navigation Kütüphanesinin Kullanımı:
+## 4.) react-native-navigation Kütüphanesinin Kullanımı:
 Kurulum tamamlandıktan sonra ana dizinde "src" adında bir klasör oluşturalım. "src" klasörünün altında "containers" ve "navigation" isimlerinde klasörler oluşturalım. "container" klasörünün altında yapacağımız ekranları konumlandıracağız. "navigation" klasöründe ise "stack" ve "tab" navigation kullanımlarını inceleyeceğiz.
 
-## 3.1.) Ekranların Tasarlanması:
+## 4.1.) Ekranların Tasarlanması:
 
 Uygulamamızda 4 adet ana ekran (Mesajlar, Bildirimler, Profil ve Ayarlar) bulunmaktadır ve bunları "tab navigation" içerisinde tasarlayıp geçiş sağlayacağız. Somutlaştırmak amacıyla ekranın amaçlarını da inceleyelim:
 
@@ -141,7 +152,7 @@ Bu ekranları fonksiyonel olarak kodlamayacağız, amacımız "navigation" yapı
 >> **Projenin Visual Studio Code İle Açılması:**
 Visual Studio Code açılır. Daha sonra "File/Open" menüsünden projeyi oluşturduğumuz ana dizin seçilir. 
 
-## 3.1.1.) Ana Dosya Dizinlerinin Oluşturulması:
+## 4.1.1.) Ana Dosya Dizinlerinin Oluşturulması:
 
 Yaygın yaklaşım olarak kodlarımızı "src" isminde ana bir dizinin altında konumlandırıyoruz. "src" klasörünün altında;
 
@@ -150,7 +161,7 @@ Yaygın yaklaşım olarak kodlarımızı "src" isminde ana bir dizinin altında 
 
 "container" klasörünün altında "message", "notification", "profile" ve "setting" isimlerinde klasörler oluşturalım ve ekranlarımızı bu klasörler üzerinden yönetelim.
 
-## 3.1.2.) Mesaj Ekranı (MessageScreen.tsx)
+## 4.1.2.) Mesaj Ekranı (MessageScreen.tsx)
 
 Daha sonra tüm bu ekranların altında aşağıdaki .tsx (.js de olabilir) dosyalarını oluşturalım. Örneğin aşağıdaki "MessageScreen.tsx" dosyasını "src/container/message" klasörünü Visual Studio Code üzerinden seçerek "New File" diyelim ve "MessageScreen.tsx" ismini verelim. Boş olarak oluşmuş dosyanın içerisine aşağıdaki kod parçacığını yapıştıralım.
 
@@ -201,7 +212,7 @@ Bu kod parçacığında bir buton tanımladık ve butona tıklandığında ne ya
 
 Şimdi diğer ekranlarımızı tasarlayalım.
 
-## 3.1.3.) Bildirim Ekranı (NotificationScreen.tsx)
+## 4.1.3.) Bildirim Ekranı (NotıfıcatıonScreen.tsx)
 
 Diğer ekranlarımızda MessageScreen ekranına benzer şekilde projemize dahil edelim. Visual Studio Code'da "src/container/notification" klasörünü seçerek, "New File" diyelim ve "NotificationScreen.tsx" ismiyle adlandıralım. Daha sonra aşağıdaki kodu bu dosyaya yapıştıralım. 
 
@@ -224,7 +235,7 @@ function NotificationScreen({ navigation }) {
 export default NotificationScreen;
 ```
 
-## 3.1.4.) Profil Ekranı (ProfileScreen.tsx)
+## 4.1.4.) Profil Ekranı (ProfıleScreen.tsx)
 
 Visual Studio Code'da "src/container/profile" klasörünü seçerek, "New File" diyelim ve "ProfileScreen.tsx" ismiyle adlandıralım. Daha sonra aşağıdaki kodu bu dosyaya yapıştıralım. 
 
@@ -246,7 +257,7 @@ function ProfileScreen({ navigation }) {
 export default ProfileScreen;
 ```
 
-## 3.1.5.) Ayarlar Ekranı (SettingScreen.tsx)
+## 4.1.5.) Ayarlar Ekranı (SettingScreen.tsx)
 
 Visual Studio Code'da "src/container/settig" klasörünü seçerek, "New File" diyelim ve "SettingScreen.tsx" ismiyle adlandıralım. Daha sonra aşağıdaki kodu bu dosyaya yapıştıralım. 
 
@@ -268,7 +279,7 @@ function SettingScreen({ navigation }) {
 export default SettingScreen;
 ```
 
-## 3.1.6.) Detay Ekranı (Details.tsx)
+## 4.1.6.) Detay Ekranı (Details.tsx)
 
 Detay ekranı, tasarlanan tüm diğer ekranların "buton" elemanının "onClick()" metodunda kullanılmıştır ve "StackNavigation" kullanımını örneklendirmek için kullanılmıştır.
 
@@ -293,9 +304,9 @@ function Details({ navigation }) {
   export default Details;
 ```
 
-## 4.) Navigation'ın Ayarlanması:
+## 5.) Navıgation'ın Ayarlanması:
 
-## 4.1.) StackNavigation.tsx 
+## 5.1.) StackNavıgatıon.tsx 
 
 Dosya dizininden "src/navigation" klasörünün altına gelip yeni bir .tsx uzantılı (veya .js) "StackNavigation.tsx" isminde bir dosya oluşturunuz. Benzer şekilde Visual Studio code içerisinden "src/navigation" klasörünü seçerek "New File" seçeneğinde "StackNavigation.tsx" yazarak dosyayı oluşturalım. Dosyayı oluşturduktan sonra aşağıdaki kod parçacığını dosyaya yapıştırınız.
 
@@ -353,7 +364,7 @@ creenOptions={{
         }}
 ```
 
-## 4.2.) TabNavigation.tsx
+## 5.2.) TabNavıgation.tsx
 
 Dosya dizininden "src/navigation" klasörünün altına gelip yeni bir .tsx uzantılı (veya .js) "TabNavigation.tsx" isminde bir dosya oluşturunuz. Benzer şekilde Visual Studio code içerisinden "src/navigation" klasörünü seçerek "New File" seçeneğinde "TabNavigation.tsx" yazarak dosyayı oluşturalım. Dosyayı oluşturduktan sonra aşağıdaki kod parçacığını dosyaya yapıştırınız.
 
@@ -411,7 +422,7 @@ function TabNavigation() {
             ...
 ```            
 
-## 5.) App.tsx
+## 6.) App.tsx
 
 >> Ana dizinde yani "src" dizininin üzerinde **"App.js"** isminde bir sınıf bulunmaktadır. Bu sınınfın adını **"App.tsx"** olarak değiştirelim. "App.tsx" veya "App.js" uygulamamız ilk açıldığında gösterilecek olan sınıftır. Kod incelemeye buradan başlamak doğru olacaktır, giriş noktasıdır. Kod parçacığını incelediğimizde" "<NavigationContainer />" ile anasayfamızda bir navigation topluluğu kullanabileceğimizi belirtmiş olduk. Daha sonra önceden tasarlamış olduğumuz "<StackNavigatinon>" "component"imizi "container" içinde konumlandırıyoruz. Ek olarak "StackNavigation" sınıfını da import ettik. 
 
@@ -433,15 +444,16 @@ export default App;
 
 Son olarak projemizi tamamladığımızda emulatörlerde aşağıdaki gibi projemizi oluşturmuş olduk. 
 
-<img src="/images/react-native-navigation/3.png" height="400" width="400">
+<img src="/images/react-native-navigation/3.png" height="600" width="600">
 
-<img src="/images/react-native-navigation/4.png" height="400" width="400">
+<img src="/images/react-native-navigation/4.png" height="600" width="600">
 
-## 6.) Projeye Github Üzerinden Erişim ve Çalıştırma:
-
-Projenin son halini [buradan](https://github.com/volkanulutas/blog-tutorials/tree/master/ReactNativeNavigationSample) inceleyebilirsiniz.
+## 7.1.) Projeye Gıthub Üzerinden Erişim ve Çalıştırma:
 
 <img src="/images/react-native-navigation/github.jpg" height="150" width="300">
+
+Projenin son halini ***[buradan](https://github.com/volkanulutas/blog-tutorials/tree/master/ReactNativeNavigationSample)***inceleyebilirsiniz.
+
 
 Github üzerinden "fork"layarak veya "clone" ederek eriştiğiniz kodu aşağıdaki komutlar derleyip, çalıştırabilirsiniz. Öncelikle projeyi indirdiğiniz dizine gidiniz.
 
