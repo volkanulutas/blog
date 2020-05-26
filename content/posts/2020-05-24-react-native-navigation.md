@@ -75,7 +75,7 @@ Kurulum doğru olarak yapılandırılmış ise, emulator veya bağlı olan cihaz
 Bu aşamaya kadar kodumuzu ***[buradan](https://github.com/volkanulutas/blog-tutorials/tree/ebfec43487241bac1314de81ea3121f2a6c43f9e)*** inceleyebilirsiniz.
 
 
-## 3.) react-natıve-navıgation Kütüphanesinin Kurulumu:
+## 3.) react-natıve-navıgatıon Kütüphanesinin Kurulumu:
 
 Ana dizine gidelim.
 ```sh
@@ -259,7 +259,7 @@ export default ProfileScreen;
 
 ## 4.1.5.) Ayarlar Ekranı (SettingScreen.tsx)
 
-Visual Studio Code'da "src/container/settig" klasörünü seçerek, "New File" diyelim ve "SettingScreen.tsx" ismiyle adlandıralım. Daha sonra aşağıdaki kodu bu dosyaya yapıştıralım. 
+Visual Studio Code'da "src/container/setting" klasörünü seçerek, "New File" diyelim ve "SettingScreen.tsx" ismiyle adlandıralım. Daha sonra aşağıdaki kodu bu dosyaya yapıştıralım. 
 
 ```js
 import * as React from 'react';
@@ -340,7 +340,7 @@ function StackNavigaiton() {
   export default StackNavigaiton;
 ```
 
-StackNavigation yapısını, WEB tarayıcınızda olduğu gibi gidilen bir sitedeki "Geri/İleri" butonlarına bahsedebiliriz. Site içerisinde tıkladığınız her bağlantı sonrasında "Geri" butonuyla bir önceki sayfaya gidilebilir. "StackNavigation"de aynı şekilde bir sayfadan diğerine gittiğimizde "Geri" butonuyla bir önceki ekrana geçişimizi sağlar. Genellikle detay ekranlarında kullanılır. Bizim projemizden örnek verecek olursak, "Mesajlar" ekranında arkadaş listenizin gösterildiğini düşünelim, herhangi bir arkdaşınızın ismine tıkladığınızda açılan "Mesajlaşma" ekranı "detay" ekranı olarak düşünülebilir. Yine "Geri" butonuyla arkadaş listenize gelebileceksiniz.
+StackNavigation yapısını, WEB tarayıcınızda olduğu gibi gidilen bir sitedeki "Geri/İleri" butonlarına bahsedebiliriz. Site içerisinde tıkladığınız her bağlantı sonrasında "Geri" butonuyla bir önceki sayfaya gidilebilir. "StackNavigation"de aynı şekilde bir sayfadan diğerine gittiğimizde "Geri" butonuyla bir önceki ekrana geçişimizi sağlar. Genellikle detay ekranlarında kullanılır. Bizim projemizden örnek verecek olursak, "Mesajlar" ekranında arkadaş listenizin gösterildiğini düşünelim, herhangi bir arkdaşınızın ismine tıklandığında açılan "Mesajlaşma" ekranı "detay" ekranı olarak düşünülebilir. Yine "Geri" butonuyla arkadaş listenize gelebileceksiniz.
 
 
 Burada "import"larımızı yapıyoruz. Detay ekranımızı "stack" yapısında kullacağız. Ana ekranımız  "TabNavigation" olacaktır. Detay ekranımız ise "Details" sınıfı olacaktır ve TabNavigation içerinde yer alan sınıfların (MessageScreen.tsx, ProfileScreen.tsx gibi) onClick metodunda "Details" ekranını açıyoruz. "StackNavigation"a eklediğimiz "Details" sınıfı sayesinde "Geri" kontrolünü oluşturmuş olduk.
@@ -412,7 +412,7 @@ Daha sonra global olarak aşağıdaki kod ile TabNavigation'ı yaratıyoruz.
 const Tab = createBottomTabNavigator();
 ```
 
-return fonsiyonu içinde o sınıfta yaptığımız tasarımı döndüğümüzü belirtmiştik, şimdi burada da navigation tasarımızı aşağıdaki gibi tasarlayıp dönüyoruz. Tab.Screen alanının "name" alanında ilgili "tab"ımızın görünen adını vermiş oluyoruz, "component" olarak ise import ettiğimiz ekranlardan hangisinin tıklanıldığında gidileceğini belirtmiş olduk.
+return fonksiyonu içinde o sınıfta yaptığımız tasarımı döndüğümüzü belirtmiştik, şimdi burada da navigation tasarımızı aşağıdaki gibi tasarlayıp dönüyoruz. Tab.Screen alanının "name" alanında ilgili "tab"ımızın görünen adını vermiş oluyoruz, "component" olarak ise import ettiğimiz ekranlardan hangisinin tıklandığında gidileceğini belirtmiş olduk.
 
 ```js
 function TabNavigation() {
@@ -442,7 +442,7 @@ const App: () => React$Node = () => {
 export default App;
 ```
 
-Son olarak projemizi tamamladığımızda emulatörlerde aşağıdaki gibi projemizi oluşturmuş olduk. 
+Son olarak projemizi tamamladığımızda emülatörlerde aşağıdaki gibi projemizi oluşturmuş olduk. 
 
 <img src="/images/react-native-navigation/3.png" height="600" width="600">
 
