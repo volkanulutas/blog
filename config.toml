@@ -50,6 +50,7 @@ uglyURLs = false
 [permalinks]
     categories = "/categories/:slug/"
     tags = "/tags/:slug/"
+    post = "/blog/:title/"
 
 # Taxonomies
 [taxonomies]
