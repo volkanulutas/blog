@@ -11,9 +11,9 @@ weight: 10
 tags:
 - TUSAŞ, TAI, Udemy Eğitimleri, Java, Spring
 categories: 
-  - 
+  - Güncelleme
 series:
-  - Öneriler
+  - Güncelleme
 draft: false
 ---
 
